@@ -1,0 +1,470 @@
+/*body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin: 0 1em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+.login-button, .signup-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin: 0 1em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+.login-button, .signup-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.overlay {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+.overlay h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+#findHospitalsBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#findHospitalsBtn:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.search-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.search-container form {
+    display: inline-block;
+    text-align: left;
+}
+
+.search-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.abc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    text-align: center;
+    margin: 10px;
+}
+
+.image-container img {
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    border-color: #000000;
+}
+
+.image-container p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #000000;
+}
+
+
+
+
+
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 40px 0;
+  }
+  
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-sections {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .footer-services, .footer-about, .footer-contact {
+    flex: 1;
+    font-size:24px;
+    margin-bottom: 20px;
+    color: #ffcc00
+  }
+  
+  .footer-services h2, .footer-about h2, .footer-contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+  }
+  
+  .footer-services ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-services ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-services ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-services ul li a:hover {
+    color: #ffcc00;
+  }
+  
+  .footer-about p, .footer-contact ul {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .footer-contact ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-contact ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #2c3e50;
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }*/
+  /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.search-container {
+    max-width: 600px; /* Adjust as needed */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    flex: 1 1 100%; /* Equal width for all labels */
+    margin-bottom: 5px;
+}
+
+input, select {
+    flex: 1 1 100%; /* Equal width for all inputs and selects */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    flex: 1 1 100%; /* Equal width for the button */
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+

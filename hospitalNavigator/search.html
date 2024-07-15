@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Search</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <header>
+        <div class="logo">HOSPITAL NAVIGATOR</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="header.html">Home</a></li>
+                <li><a href="header.html#about">About</a></li>
+                <li><a href="header.html#services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <h2>Find a Hospital</h2>
+        <form id="searchForm" action="process_preferences.php" method="get">
+            <label for="name">Name of the Patient:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="age">Age: <span style="color: red;">*</span></label><br>
+            <select id="age" name="age" required>
+                <option value="0-5">0-5 years</option>
+                <option value="6-18">6-18 years</option>
+                <option value="19-40">19-40 years</option>
+                <!-- Add more options as needed -->
+            </select><br>
+            <label for="healthIssue">Health Issue: <span style="color: red;">*</span></label><br>
+            <select id="healthIssue" name="healthIssue" required>
+                <option value="">Select Health Issue</option>
+                <option value="Pediatric Care">Pediatric Care</option>
+                <option value="Heart Disease">Heart Disease</option>
+                <option value="Bone Fracture">Bone Fracture</option>
+                <option value="Headache">Headache</option>
+                <option value="Skin Rash">Skin Rash</option>
+                <!-- Add more options as needed -->
+            </select><br>
+            <label for="specialist">Specialist: <span style="color: red;">*</span></label><br>
+            <select id="specialist" name="specialist" required>
+                <option value="">Select Specialist</option>
+                <!-- Specialist options will be dynamically updated -->
+            </select><br>
+            <label for="area">Area of Hospital: <span style="color: red;">*</span></label><br>
+            <input type="text" id="area" name="area" required><br>
+            <label for="minCost">Affordable Minimum Cost: <span style="color: red;">*</span></label><br>
+            <input type="number" id="minCost" name="minCost" required><br>
+            <label for="maxCost">Affordable Maximum Cost: <span style="color: red;">*</span></label><br>
+            <input type="number" id="maxCost" name="maxCost" required><br>
+            <div id="costError" style="color: red; display: none;">Minimum cost should not be greater than maximum cost.</div><br>
+            <label for="acPreference">AC Preference:</label><br>
+            <select id="acPreference" name="acPreference">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+            <label for="numBeds">Number of Beds (up to 3):</label><br>
+            <input type="number" id="numBeds" name="numBeds" min="0" max="3"><br><br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <script>
+        const healthIssueToSpecialist = {
+            'Pediatric Care': ['Pediatrician'],
+            'Heart Disease': ['Cardiologist'],
+            'Bone Fracture': ['Orthopedic Surgeon'],
+            'Headache': ['Neurologist'],
+            'Skin Rash': ['Dermatologist']
+            // Add more mappings as needed
+        };
+
+        document.getElementById('healthIssue').addEventListener('change', function() {
+            const selectedHealthIssue = this.value;
+            const specialistSelect = document.getElementById('specialist');
+
+            while (specialistSelect.options.length > 0) {
+                specialistSelect.remove(0);
+            }
+
+            if (selectedHealthIssue && healthIssueToSpecialist[selectedHealthIssue]) {
+                healthIssueToSpecialist[selectedHealthIssue].forEach(function(specialist) {
+                    const option = document.createElement('option');
+                    option.value = specialist;
+                    option.text = specialist;
+                    specialistSelect.add(option);
+                });
+            }
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            const minCost = document.getElementById('minCost').value;
+            const maxCost = document.getElementById('maxCost').value;
+            const costError = document.getElementById('costError');
+
+            if (parseInt(minCost) > parseInt(maxCost)) {
+                costError.style.display = 'block';
+                event.preventDefault();
+            } else {
+                costError.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

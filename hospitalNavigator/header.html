@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Navigator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">HOSPITAL NAVIGATOR</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="loginModal" class="modal">
+        <div class="login-container">
+            <div class="tabs">
+                <button class="tab active" onclick="showLoginForm()">Login</button>
+                <button class="tab" onclick="showSignupForm()">Signup</button>
+            </div>
+            <form id="loginForm" class="login-form" action="login.php" method="post">
+                <h2>Login Form</h2>
+                <input type="email" id="loginEmail" name="loginEmail" placeholder="Email Address" required>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="signup-link">
+                    Create an account <a href="#" onclick="showSignupForm()">Signup now</a>
+                </div>
+            </form>
+            <form id="signupForm" class="login-form" action="register.php" method="post" style="display: none;">
+                <h2>Signup Form</h2>
+                <input type="email" id="signupEmail" name="signupEmail" placeholder="Email Address" required>
+                <input type="password" id="signupPassword" name="signupPassword" placeholder="Password" required>
+                <button type="submit" class="login-btn">Signup</button>
+            </form>
+            
+            <form id="otpVerificationForm" class="login-form" action="verify_otp.php" method="post" style="display: none;">
+                <h2>OTP Verification</h2>
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+                <button type="submit" class="login-btn">Verify OTP</button>
+            </form>
+            
+        </div>
+    </div>
+    
+    <section id="home" class="overlay">
+        <h1>Find Your Friendly Hospitals</h1>
+        <div class="button-container">
+            <button id="findHospitalsBtn">Find Hospital</button>
+        </div>
+    </section>
+
+    <div class="abc">
+        <div class="image-container">
+            <a href="apollo.html">
+                <img src="apollo.jpg" width="300px" height="200px">
+            </a>
+            <p>Apollo Multi-Speciality Hospital</p>
+        </div>
+        <div class="image-container">
+            <a href="max.html">
+                <img src="max.jpg" width="300px" height="200px">
+            </a>
+            <p>BLK-Max Multi-Speciality Hospital</p>
+        </div>
+        <div class="image-container">
+            <a href="manipal.html">
+                <img src="manipal.webp" width="300px" height="200px">
+            </a>
+            <p>Manipal Multi-Speciality Hospital</p>
+        </div>
+    </div>
+
+    <section id="about" class="about-section">
+        <!-- About content here -->
+    </section>
+
+    <section id="services" class="about-services">
+        <!-- Services content here -->
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-sections">
+                <div class="footer-services">
+                    <h2>Our Services</h2>
+                    <ul>
+                        <li><a href="#">Service 1</a></li>
+                        <li><a href="#">Service 2</a></li>
+                        <li><a href="#">Service 3</a></li>
+                        <li><a href="#">Service 4</a></li>
+                    </ul>
+                </div>
+                <div class="footer-about">
+                    <h2>About Us</h2>
+                    <p>We are dedicated to providing excellent services to our clients. Our goal is to meet and exceed our clients' expectations by delivering high-quality solutions.</p>
+                </div>
+                <div class="footer-contact">
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li><strong>Email:</strong> mteja3532@gmail.com</li>
+                        <li><strong>Phone:</strong> 91+ 8897843532</li>
+                        <li><strong>Address:</strong> 1234 Street, kadapa, Andhra Pradesh, 516237</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hospital Navigator. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="web.js"></script>
+</body>
+</html>
